@@ -45,11 +45,27 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
+# REST_FRAMEWORK = {
+# 'DEFAULT_PERMISSION_CLASSES': [
+# 'rest_framework.permissions.AllowAny',
+# ]
+# }
+
 REST_FRAMEWORK = {
 'DEFAULT_PERMISSION_CLASSES': [
-'rest_framework.permissions.AllowAny',
+'rest_framework.permissions.IsAuthenticated',
 ]
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+'http://localhost:3000',
+'http://localhost:8000',
+)
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
